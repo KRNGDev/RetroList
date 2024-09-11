@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6" size-lg="4">
+        <form (submit)="login()">
+          <ion-item>
+            <ion-input label="Nombre"  type="text"
+            [(ngModel)]="username" name="username" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Contraseña"  type="password"
+            [(ngModel)]="apiKey" name="password" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+            
+          </ion-item>
+
+          <ion-button
+            expand="full"
+            type="submit"
+            style="margin-top: 20px;"
+            color="primary"
+          >
+            Iniciar Sesión
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

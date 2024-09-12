@@ -25,3 +25,109 @@
 #container a {
   text-decoration: none;
 }
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+.back-icon {
+  color: #0e141b;
+  font-size: 24px;
+}
+
+.profile-title {
+  color: #0e141b;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.profile-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0e141b;
+}
+
+.profile-joined, .profile-location {
+  color: #4e7397;
+  font-size: 1rem;
+}
+
+.follow-button {
+  background-color: #e7edf3;
+  color: #0e141b;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+}
+
+.interest {
+  display: flex;
+  align-items: center;
+  background-color: #e7edf3;
+  padding: 4px 8px;
+  border-radius: 12px;
+  gap: 4px;
+  color: #0e141b;
+}
+
+.interest ion-icon {
+  font-size: 20px;
+  color: #0e141b;
+}
+
+.interest p {
+  margin: 0;
+  font-size: 14px;
+}
+
+ion-card {
+  --background:#dddddd;
+}
+ion-toolbar{
+  --background:#c02f2f;
+  display: flex;
+  flex-direction: row;
+}
+ion-header{
+  display: flex;
+  flex-direction: row;
+}

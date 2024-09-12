@@ -1,20 +1,63 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+ 
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="profile-container">
+      <div class="header">
+        <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
+        <h2 class="profile-title"></h2>
+      </div>
+      <ion-card>
+        <div class="profile-content">
+          
+            <img class="avatar" [alt]="['imagen ',getLogin().User]" [src]="['https://retroachievements.org'+getLogin().UserPic]" />
+         
+          <div class="profile-info">
+            <p class="profile-name">{{getLogin().User}}</p>
+            <p>Puntos RA: {{getLogin().TotalSoftcorePoints}}</p>
+            <p class="profile-joined">Joined in {{getLogin().MemberSince}}</p>
+            <p class="profile-location">{{getLogin().RichPresenceMsg}}</p>
+          </div>
+
+          <ion-button expand="block" class="follow-button">Hola</ion-button>
+        </div>
+
+        <div class="interests">
+          <div class="interest">
+            <ion-icon name="fitness-outline"></ion-icon>
+            <p>Yoga</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="walk-outline"></ion-icon>
+            <p>Hiking</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="globe-outline"></ion-icon>
+            <p>Travel</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="restaurant-outline"></ion-icon>
+            <p>Foodie</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="book-outline"></ion-icon>
+            <p>Books</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="color-palette-outline"></ion-icon>
+            <p>Art</p>
+          </div>
+        </div>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

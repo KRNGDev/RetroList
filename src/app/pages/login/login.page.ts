@@ -4,8 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonItem, IonLabel, IonButton, IonInput } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 import { Router } from '@angular/router';
-
 import { NavController, AlertController } from '@ionic/angular';
+import { UserRA } from 'src/app/interface/usr-ra';
+import { DataRAService } from 'src/app/servicio/data/data-ra.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -17,14 +20,16 @@ import { NavController, AlertController } from '@ionic/angular';
 export class LoginPage {
   username: string = '';
   apiKey: string = '';
+  
 
-  constructor(private router: Router,private retroAuthService: AuthService, private alertCtrl: AlertController) {}
+  constructor(private router: Router,private retroAuthService: AuthService,private dataUserService: DataRAService, private alertCtrl: AlertController) {}
 
   async login() {
     if (this.username && this.apiKey) {
       try {
         const userSummary = await this.retroAuthService.login(this.username, this.apiKey);
-        console.log('Inicio de sesión exitoso:', userSummary);
+        this.dataUserService.setUser(userSummary);
+        console.log('Inicio de sesión exitoso:',userSummary);
 
 
         this.router.navigate(['/home']);
@@ -46,3 +51,9 @@ export class LoginPage {
     await alert.present();
   }
 }
+
+
+
+
+
+

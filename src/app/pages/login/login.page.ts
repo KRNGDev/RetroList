@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { NavController, AlertController } from '@ionic/angular';
 import { UserRA } from 'src/app/interface/usr-ra';
 import { DataRAService } from 'src/app/servicio/data/data-ra.service';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -29,9 +30,8 @@ export class LoginPage {
       try {
         const userSummary = await this.retroAuthService.login(this.username, this.apiKey);
         this.dataUserService.setUser(userSummary);
+        this.dataUserService.setKey(this.apiKey);
         console.log('Inicio de sesión exitoso:',userSummary);
-
-
         this.router.navigate(['/home']);
         // Guardar el estado de la sesión, redirigir o cualquier otra acción necesaria
       } catch (error) {

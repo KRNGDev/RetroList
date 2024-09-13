@@ -7,17 +7,21 @@
       side="end"
     >
       <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Movie Manager</ion-list-header>
-          <ion-note>by krng</ion-note>
+        <ion-list  id="inbox-list">
+          <ion-header>
+          
+            <img  class="avatar" [alt]="['imagen ',getLogin().User]" [src]="['https://retroachievements.org'+getLogin().UserPic]" />
+          
+          <ion-list-header >{{getLogin().User}}</ion-list-header>
+          <ion-note> RA {{getLogin().TotalSoftcorePoints}}</ion-note>
+        </ion-header>
 
           <ion-menu-toggle
             auto-hide="false"
             *ngFor="let p of appPages; let i = index"
           >
             <ion-item
-              routerDirection="root"
-             
+              routerDirection="root"             
               lines="none"
               detail="false"
               routerLinkActive="selected"
@@ -34,11 +38,7 @@
          
         </ion-list>
 
-        <ion-list id="labels-list">
-          <ion-list-header>Etiquetas</ion-list-header>
-
-         
-        </ion-list>
+      
       </ion-content>
       <ion-footer>
         <ion-menu-toggle auto-hide="false">

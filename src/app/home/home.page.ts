@@ -4,6 +4,7 @@ import { IonHeader, IonMenuButton, IonToolbar, IonTitle, IonContent, IonButton, 
 import { arrowBackOutline, fitnessOutline, walkOutline, golfOutline, restaurantOutline, bookOutline, globeOutline, colorPaletteOutline } from 'ionicons/icons';
 import { DataRAService } from '../servicio/data/data-ra.service';
 import { UserRA } from '../interface/usr-ra';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,19 +15,19 @@ import { UserRA } from '../interface/usr-ra';
 export class HomePage {
   loginUser: UserRA ;
   constructor(private dataUserService: DataRAService) {
-    addIcons({ arrowBackOutline, fitnessOutline, walkOutline, globeOutline, restaurantOutline, bookOutline, colorPaletteOutline });
-   
+    addIcons({ arrowBackOutline, fitnessOutline, walkOutline, globeOutline, restaurantOutline, bookOutline, colorPaletteOutline });   
     this.loginUser = dataUserService.getUser();
    
   }
 
   getLogin():UserRA{
-    this.loginUser = this.dataUserService.getUser();
-    
+    this.loginUser = this.dataUserService.getUser();    
     return this.loginUser ;
   }
 
-
+boton(){
+  console.log("muestra key "+this.dataUserService.getKey());
+}
 
 
 

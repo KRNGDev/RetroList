@@ -10,54 +10,77 @@
 <ion-content [fullscreen]="true">
  
 
-  <div id="container">
+  
     <div class="profile-container">
-      <div class="header">
-        <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
-        <h2 class="profile-title"></h2>
+      <div class="profile-info">
+        <div class="profile-image" [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}"></div>
+  
+        <div class="profile-text">
+          <p class="ion-text-capitalize profile-name">{{loginUser.User}} </p>
+          <ion-chip >
+            
+            <ion-label>{{loginUser.TotalSoftcorePoints}}</ion-label>
+          </ion-chip>
+        </div>
+       
       </div>
-      <ion-card>
-        <div class="profile-content">
-          
-            <img class="avatar" [alt]="['imagen ',getLogin().User]" [src]="['https://retroachievements.org'+getLogin().UserPic]" />
-         
-          <div class="profile-info">
-            <p class="profile-name">{{getLogin().User}}</p>
-            <p>Puntos RA: {{getLogin().TotalSoftcorePoints}}</p>
-            <p class="profile-joined">Joined in {{getLogin().MemberSince}}</p>
-            <p class="profile-location">{{getLogin().RichPresenceMsg}}</p>
-          </div>
-
-          <ion-button (click)="boton()" expand="block" class="follow-button">Hola</ion-button>
-        </div>
-
-        <div class="interests">
-          <div class="interest">
-            <ion-icon name="fitness-outline"></ion-icon>
-            <p>Yoga</p>
-          </div>
-          <div class="interest">
-            <ion-icon name="walk-outline"></ion-icon>
-            <p>Hiking</p>
-          </div>
-          <div class="interest">
-            <ion-icon name="globe-outline"></ion-icon>
-            <p>Travel</p>
-          </div>
-          <div class="interest">
-            <ion-icon name="restaurant-outline"></ion-icon>
-            <p>Foodie</p>
-          </div>
-          <div class="interest">
-            <ion-icon name="book-outline"></ion-icon>
-            <p>Books</p>
-          </div>
-          <div class="interest">
-            <ion-icon name="color-palette-outline"></ion-icon>
-            <p>Art</p>
-          </div>
-        </div>
-      </ion-card>
+     
     </div>
-  </div>
+  
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Información </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="grid-container">
+          <ion-item>
+            <ion-thumbnail>
+              <img [src]="['https://retroachievements.org' + ultimoJuego.ImageIcon]" alt="imagen">
+            </ion-thumbnail>
+            <ion-label class="ion-text-end">
+              <h2>Ultimo Juego</h2>
+              <p >{{ultimoJuego.Title}}</p>
+              <p>{{ultimoJuego.Console}}</p>
+              <p>{{ultimoJuego.Publisher}}</p>
+             
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label class="ion-text-end">
+              <h2>Logros</h2>
+            
+              
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>About</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="grid-container">
+          <ion-item>
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Fecha de nacimiento</h2>
+              <p>Female, Age 30</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="location-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Dirección</h2>
+              
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  
+ 
 </ion-content>

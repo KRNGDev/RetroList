@@ -8,79 +8,84 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
 
-  
-    <div class="profile-container">
-      <div class="profile-info">
-        <div class="profile-image" [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}"></div>
-  
-        <div class="profile-text">
-          <p class="ion-text-capitalize profile-name">{{loginUser.User}} </p>
-          <ion-chip >
-            
-            <ion-label>{{loginUser.TotalSoftcorePoints}}</ion-label>
-          </ion-chip>
-        </div>
-       
+
+
+  <div class="profile-container">
+    <div class="profile-info">
+      <div class="profile-image"
+        [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}"></div>
+      <div class="profile-text">
+        <p class="ion-text-capitalize profile-name">{{loginUser.User}} </p>
+        <ion-chip>
+          <ion-label>{{loginUser.TotalSoftcorePoints}}</ion-label>
+        </ion-chip>
       </div>
-     
+
     </div>
-  
-    
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Información </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div class="grid-container">
-          <ion-item>
-            <ion-thumbnail>
-              <img [src]="['https://retroachievements.org' + ultimoJuego.ImageIcon]" alt="imagen">
-            </ion-thumbnail>
-            <ion-label class="ion-text-end">
-              <h2>Ultimo Juego</h2>
-              <p >{{ultimoJuego.Title}}</p>
-              <p>{{ultimoJuego.Console}}</p>
-              <p>{{ultimoJuego.Publisher}}</p>
+
+  </div>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-container">
+        <ion-item>
+          <ion-thumbnail>
+            <img [src]="['https://retroachievements.org' + ultimoJuego.ImageIcon]" alt="imagen">
+          </ion-thumbnail>
+          <ion-label class="ion-text-end">
+            <h2>Ultimo Juego</h2>
+            <p>{{ultimoJuego.Title}}</p>
+            <p>{{ultimoJuego.Console}}</p>
+            <p>{{ultimoJuego.Publisher}}</p>
+
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <div class="lista">
+          <h2 class="ion-text-end ion-margin-bottom">Juegos Jugados</h2>
+          <div class="juegos">
+
+            <ion-thumbnail *ngFor="let juego of playGames">
+              
+              <img [src]="['https://retroachievements.org' + juego.ImageIcon]" alt="imagen">
              
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="mail-outline" slot="start"></ion-icon>
-            <ion-label class="ion-text-end">
-              <h2>Logros</h2>
-            
-              
-            </ion-label>
-          </ion-item>
+            </ion-thumbnail>
+          </div>
         </div>
-      </ion-card-content>
-    </ion-card>
-  
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>About</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div class="grid-container">
-          <ion-item>
-            <ion-icon name="person-outline" slot="start"></ion-icon>
-            <ion-label>
-              <h2>Fecha de nacimiento</h2>
-              <p>Female, Age 30</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="location-outline" slot="start"></ion-icon>
-            <ion-label>
-              <h2>Dirección</h2>
-              
-            </ion-label>
-          </ion-item>
-        </div>
-      </ion-card-content>
-    </ion-card>
-  
- 
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>About</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-container">
+        <ion-item>
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h2>Fecha de nacimiento</h2>
+            <p>Female, Age 30</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h2>Dirección</h2>
+
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>

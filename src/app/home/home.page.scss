@@ -7,6 +7,12 @@
   font-size: 24px;
   background-color: #11151800;
 }
+.juegos{
+  display: flex;
+  
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 .profile-container {
   display: flex;
@@ -58,6 +64,7 @@ ion-item {
   border-radius: 8px;
   background-color: white;
   padding: 16px;
+  
 }
 
 ion-item h2 {

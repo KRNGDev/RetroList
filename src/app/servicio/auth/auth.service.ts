@@ -12,6 +12,7 @@ export class AuthService {
   private perfil = 'API_GetUserProfile.php';
   private resumenJuego = 'API_GetGame.php';
   private playJuegos = 'API_GetUserRecentlyPlayedGames.php';
+  private ultimosLogros = 'API_GetUserRecentAchievements.php';
 
   constructor(private http: HttpClient, private platform: Platform) {}
 
@@ -51,8 +52,14 @@ export class AuthService {
     const params = { i: ideGame, y: apiKey };
     return this.makeHttpRequest(this.resumenJuego, params);
   }
+  
   async allPlayGame(username: string, apiKey: string) {
     const params = { u: username, y: apiKey };
     return this.makeHttpRequest(this.playJuegos, params);
+  }
+  
+  async allAchievements(username: string, apiKey: string) {
+    const params = { u: username, y: apiKey ,m:20000000};
+    return this.makeHttpRequest(this.ultimosLogros, params);
   }
 }

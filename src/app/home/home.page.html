@@ -11,21 +11,6 @@
 
 
 
-  <div class="profile-container">
-    <div class="profile-info">
-      <div class="profile-image"
-        [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}"></div>
-      <div class="profile-text">
-        <p class="ion-text-capitalize profile-name">{{loginUser.User}} </p>
-        <ion-chip>
-          <ion-label>{{loginUser.TotalSoftcorePoints}}</ion-label>
-        </ion-chip>
-      </div>
-
-    </div>
-
-  </div>
-
 
   <ion-card>
     <ion-card-header>
@@ -39,25 +24,34 @@
           </ion-thumbnail>
           <ion-label class="ion-text-end">
             <h2>Ultimo Juego</h2>
-            <p>{{ultimoJuego.Title}}</p>
+            <p>{{loginUser.LastGameID}}</p>
             <p>{{ultimoJuego.Console}}</p>
             <p>{{ultimoJuego.Publisher}}</p>
 
           </ion-label>
         </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Juegos Jugados </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-container">
         <ion-item>
           <div class="lista">
-          <h2 class="ion-text-end ion-margin-bottom">Juegos Jugados</h2>
-          <div class="juegos">
+            <h2 class="ion-text-end ion-margin-bottom">Juegos Jugados</h2>
+            <div class="juegos">
 
-            <ion-thumbnail *ngFor="let juego of playGames">
-              
-              <img [src]="['https://retroachievements.org' + juego.ImageIcon]" alt="imagen">
-             
-            </ion-thumbnail>
+              <ion-thumbnail *ngFor="let juego of playGames">
+
+                <img [src]="['https://retroachievements.org' + juego.ImageIcon]" alt="imagen">
+
+              </ion-thumbnail>
+            </div>
           </div>
-        </div>
         </ion-item>
       </div>
     </ion-card-content>

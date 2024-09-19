@@ -1,0 +1,118 @@
+
+:host {
+    font-family: 'Inter', 'Noto Sans', sans-serif;
+  }
+  
+  .icon-button {
+    color: #111518;
+    font-size: 24px;
+    background-color: #11151800;
+  }
+  .logros{
+    display: flex;    
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .lista{
+    display: grid;
+    padding: 0;
+    margin: 0;
+  }
+.divFlex{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between ;
+  padding: 16px;
+}
+
+  .juegos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas con igual ancho */
+    gap: 10px; /* Espacio entre las columnas */
+  
+    @media (max-width: 400px) { /* Para pantallas más pequeñas */
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  
+    ion-thumbnail {
+      width: 100%;
+      height: auto;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+    }
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: row;
+    
+    gap: 8px;
+  }
+  
+  .profile-image {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .profile-text {
+    text-align: center;
+  }
+  
+  .profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111518;
+  }
+  
+  .profile-location, .profile-email {
+    color: #60778a;
+    font-size: 16px;
+  }
+  
+  
+  .grid-container {
+    display: flex;
+   justify-content: center;
+   flex-direction: column;
+    gap: 16px;
+  }
+  
+  ion-item {
+    border: 1px solid #dbe1e6;
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px;
+    
+    
+  }
+  ion-chip{
+    display: flex;
+    
+    flex-wrap: nowrap;
+  }
+  
+  ion-item h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111518;
+  }
+  
+  ion-item p {
+    font-size: 14px;
+    color: #60778a;
+  }
+  

@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 import { AuthService } from '../auth/auth.service';
 import { Juego } from 'src/app/interface/juego';
 import { JuegoLista } from 'src/app/interface/juegoLista';
+import { Logros } from 'src/app/interface/logros';
 
 const USR_RAIZ = "userLogin";
 const KEY_RAIZ = "keyLogin";
@@ -16,6 +17,7 @@ export class DataRAService {
   private apiKey: string = '';
   private ultimoJuego: Juego = {} as Juego;
   private juegosJugados: JuegoLista[] = [];
+  private ultimosLogros:Logros[]=[];
 
   constructor(private storage: Storage, private http: AuthService) {
     this.init();
@@ -86,6 +88,14 @@ export class DataRAService {
   getPlayGame():JuegoLista[]{
     return this.juegosJugados;
   }
+  
+  setLogros(data: Logros[]): void {
+    this.ultimosLogros = data;
+  }
+  getLogros():Logros[]{
+    return this.ultimosLogros;
+  }
+
 
   private async cargarDatos<T>(nodo: string, callback: (data: T | null) => void): Promise<void> {
     try {
@@ -114,6 +124,11 @@ export class DataRAService {
   async gameId(): Promise<void> {
     try {
       console.log("Datos del usuario:", this.datosUser);
+      //actualizo datos de usuario
+
+      const userSummary = await this.http.login(this.datosUser.User, this.apiKey);
+      this.setUser(userSummary);
+      console.log("Datos del usuario actualizado:", this.datosUser);
       const gameSummary = await this.http.sumaryGame(String(this.datosUser.LastGameID), this.apiKey);
       this.setLastGame(gameSummary);
       console.log('Último Juego:', gameSummary);
@@ -129,6 +144,16 @@ export class DataRAService {
     } catch (error){
       console.error('Error: lista de juegos jugados .', error);
     }
+  }
+
+  async Logros(){
+    try{
+      const todosLosLogros= await this.http.allAchievements(this.datosUser.User, this.apiKey);
+      this.setLogros(todosLosLogros);
+      console.log('Último logro:', todosLosLogros);
+      } catch (error){
+        console.error('Error: lista de juegos jugados .', error);
+      }
   }
 
   private getDefaultUserRA(): UserRA {

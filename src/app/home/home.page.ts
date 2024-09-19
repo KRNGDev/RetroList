@@ -8,6 +8,7 @@ import { UserRA } from '../interface/usr-ra';
 import { environment } from 'src/environments/environment.prod';
 import { Juego } from '../interface/juego';
 import { JuegoLista } from '../interface/juegoLista';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -27,13 +28,15 @@ export class HomePage implements OnInit {
   }
 
   getLogin():UserRA{
-    this.loginUser = this.dataUserService.getUser();    
+    this.loginUser = this.dataUserService.getUser();
+       
     return this.loginUser ;
   }
   
   async getJuego():Promise<Juego>{
     await this.dataUserService.gameId();
     this.ultimoJuego=this.dataUserService.getLastGame();
+    console.log("datos:",this.loginUser); 
     console.log("cojo juego ",this.ultimoJuego.Title);
     return this.ultimoJuego;
   }

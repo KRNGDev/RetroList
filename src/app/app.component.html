@@ -21,7 +21,8 @@
             *ngFor="let p of appPages; let i = index"
           >
             <ion-item
-              routerDirection="root"             
+              routerDirection="root"  
+              [routerLink]="[p.url]"          
               lines="none"
               detail="false"
               routerLinkActive="selected"

@@ -1,0 +1,19 @@
+.game-item {
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    height: 340px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .game-item p{
+    background-color: #11141886;
+    padding: 10px;
+    border-radius: 10px;
+  }

@@ -1,0 +1,155 @@
+$font-primary: 'Noto Sans', sans-serif;
+$font-secondary: 'Space Grotesk', sans-serif;
+$primary-color: #2e2e2e;
+$accent-color: #ff6f61;
+$background-color: #f4f4f4;
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  background-color: $background-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-back svg {
+  width: 24px;
+  height: 24px;
+  fill: $primary-color;
+}
+
+.header-title {
+  font-family: $font-secondary;
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  width: 320px;
+  height: 320px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-family: $font-secondary;
+  font-size: 20px;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.detail-value {
+  color: $primary-color;
+}
+
+.screenshots-grid {
+  display: flex;
+  gap: 8px;
+}
+
+.screenshot-item {
+  width: 200px;
+  height: 120px;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.achievement-text {
+  flex-grow: 1;
+}
+
+.achievement-title {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.achievement-subtitle {
+  color: $primary-color;
+}
+
+.achievement-image {
+  width: 120px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #e0e0e0;
+  padding: 8px 0;
+  background-color: #ffffff;
+}
+
+.footer-item {
+  text-align: center;
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.footer-item.active {
+  color: $accent-color;
+}
+
+.footer-item .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-item p {
+  margin: 0;
+}
+ion-card div img{
+  max-width: 50%;
+  max-height: 300px;
+}
+ion-card div.cabecera{
+   display: flex;
+   flex-direction: row;
+  align-items: center;
+}
+ion-icon{
+  width: 50px;
+}

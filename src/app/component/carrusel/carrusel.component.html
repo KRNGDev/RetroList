@@ -1,0 +1,9 @@
+<swiper-container effect="coverflow" [slidesPerView]="1" [loop]="true">
+  <swiper-slide *ngFor="let juego of juegos">
+    <div [routerLink]="['/ficha-juego/'+juego.GameID]"
+    routerLinkActive="router-link-active" class="game-item" [ngStyle]="{'background-image': 'url(https://retroachievements.org' + juego.ImageBoxArt + ')'}">
+      <p>{{juego.Title}}</p>
+    </div>
+  </swiper-slide>
+  
+</swiper-container>

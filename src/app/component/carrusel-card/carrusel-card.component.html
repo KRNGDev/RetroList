@@ -1,0 +1,18 @@
+<swiper-container effect="flip" [slidesPerView]="1" >
+  <swiper-slide *ngFor="let logro of logros">
+    <ion-card>
+    <ion-item lines="none">
+      <ion-thumbnail slot="end">
+        <img [src]="['https://retroachievements.org' + logro.BadgeURL]" alt="imagen">
+        
+      </ion-thumbnail>
+      <ion-label>
+        <ion-card-title>{{logro.GameTitle}}</ion-card-title>
+        <p>{{logro.Description}}</p>
+        <p>{{logro.Date}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  </swiper-slide>
+</swiper-container>

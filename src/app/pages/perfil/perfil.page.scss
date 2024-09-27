@@ -1,118 +1,128 @@
+// Variables de colores
+$background-color-dark: #111418;
+$text-color-light: #9dabb8;
+$text-color-white: #ffffff;
+$border-color-dark: #3c4753;
 
-:host {
-    font-family: 'Inter', 'Noto Sans', sans-serif;
-  }
-  
-  .icon-button {
-    color: #111518;
-    font-size: 24px;
-    background-color: #11151800;
-  }
-  .logros{
-    display: flex;    
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .lista{
-    display: grid;
-    padding: 0;
-    margin: 0;
-  }
-.divFlex{
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between ;
+.profile-container {
+  background-color: $background-color-dark;
+  color: $text-color-white;
   padding: 16px;
+  font-family: 'Space Grotesk', 'Noto Sans', sans-serif;
 }
 
-  .juegos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas con igual ancho */
-    gap: 10px; /* Espacio entre las columnas */
-  
-    @media (max-width: 400px) { /* Para pantallas más pequeñas */
-      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
-  
-    ion-thumbnail {
-      width: 100%;
-      height: auto;
-    }
-  
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-    }
+// Estilos del header
+.header {
+  --background: transparent;
+  ion-toolbar {
+    background-color: $background-color-dark;
   }
-  
-  .profile-container {
+  ion-title {
+    color: $text-color-white;
+    font-weight: 700;
+  }
+  .back-button {
+    color: $text-color-white;
+  }
+}
+
+// Perfil
+.profile-header {
+  text-align: center;
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 16px auto;
+    border: 4px solid #2a2f36; // Borde de la imagen
+  }
+  .profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .joined-info {
+    font-size: 14px;
+    color: $text-color-light;
+  }
+}
+
+// Contenedor de puntos
+.points-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+  padding: 0 20px;
+  .point-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 16px;
+    background-color: #41506454;
+    border-radius: 12px;
+    padding: 10px 15px;
+    gap: 8px;
+    .icon {
+      font-size: 24px;
+      color: $text-color-white;
+    }
+    .point-text {
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
   }
-  
-  .profile-info {
-    display: flex;
-    flex-direction: row;
-    
+}
+
+// Último logro
+.latest-achievement {
+  margin: 16px 0;
+  padding: 0 20px;
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .achievement-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
+    color: $text-color-light;
+  }
+}
+
+// Juegos jugados
+.games-played {
+  margin: 16px 0;
+  padding: 0 20px;
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .games-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  
-  .profile-image {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
+  .game-item {
     background-size: cover;
     background-position: center;
-  }
-  
-  .profile-text {
-    text-align: center;
-  }
-  
-  .profile-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: #111518;
-  }
-  
-  .profile-location, .profile-email {
-    color: #60778a;
-    font-size: 16px;
-  }
-  
-  
-  .grid-container {
+    border-radius: 12px;
+    height: 100px;
     display: flex;
-   justify-content: center;
-   flex-direction: column;
-    gap: 16px;
-  }
-  
-  ion-item {
-    border: 1px solid #dbe1e6;
-    border-radius: 8px;
-    background-color: white;
-    padding: 10px;
-    
-    
-  }
-  ion-chip{
-    display: flex;
-    
-    flex-wrap: nowrap;
-  }
-  
-  ion-item h2 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #111518;
-  }
-  
-  ion-item p {
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px;
+    color: $text-color-white;
     font-size: 14px;
-    color: #60778a;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+  .game-item p{
+    background-color: #11141886;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}

@@ -3,129 +3,43 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Perfil</ion-title>
+    <ion-title>{{loginUser.User}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="profile-container">
+  <div class="profile-header">
+    <img [src]="['https://retroachievements.org' + loginUser.UserPic]" alt="imagen"  />
+   
+    <p class="joined-info">Joined in {{getDate()}}</p>
+  </div>
 
-
-
-  <div class="profile-container">
-    <div class="profile-info">
-
-      <div class="profile-image"
-        [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}">
-
+  <div class="points-container">
+    <div class="point-item">
+      <ion-icon name="trophy-outline" class="icon"></ion-icon>
+      <div class="point-text">
+        <p>Total points: {{loginUser.TotalPoints}}</p>
       </div>
-
-      <div class="profile-text">
-
-        <h2 class="ion-text-capitalize profile-name">{{loginUser.User}}</h2>
-        <p class="ion-text-capitalize ">{{loginUser.TotalSoftcorePoints}} </p>
-
-        <ion-chip>
-          <ion-label>{{loginUser.TotalSoftcorePoints}}</ion-label>
-        </ion-chip>
-
-      </div>
-
     </div>
-
+    <div class="point-item">
+      <ion-icon name="search-outline" class="icon"></ion-icon>
+      <div class="point-text">
+        <p>Soft points: {{loginUser.TotalSoftcorePoints}}</p>
+      </div>
+    </div>
   </div>
 
 
-  <ion-card>
-<div class="divFlex">
-
-  <div class="profile-image"
-  [ngStyle]="{'background-image': 'url(https://retroachievements.org' + loginUser.UserPic+')'}">
-
-</div>
-<div>
-
-<ion-label class="ion-text-end">
-  <h2>Ultimo Juego</h2>
-  <p>{{ultimoJuego.Title}}</p>
-  <p>{{ultimoJuego.Console}}</p>
-  <p>{{ultimoJuego.Publisher}}</p>
-
-</ion-label>
-</div>
-</div>
 
 
+  <div class="latest-achievement">
+    <h3>Latest Achievement</h3>
+   <app-carrusel-card [logros]="ultimosLogros"></app-carrusel-card>
+  </div>
 
-
-    <ion-card-header>
-      <ion-card-title>Información </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="grid-container">
-        <ion-item>
-          <ion-thumbnail>
-            <img [src]="['https://retroachievements.org' + ultimoJuego.ImageIcon]" alt="imagen">
-          </ion-thumbnail>
-          <ion-label class="ion-text-end">
-            <h2>Ultimo Juego</h2>
-            <p>{{ultimoJuego.Title}}</p>
-            <p>{{ultimoJuego.Console}}</p>
-            <p>{{ultimoJuego.Publisher}}</p>
-
-          </ion-label>
-        </ion-item>
-
-        <!-------------------------------Juegos Jugados---------------------------------------->
-
-
-        <ion-item>
-          <div class="lista">
-            <h2 class="ion-text-end ion-margin-bottom">Juegos Jugados</h2>
-            <div class="juegos">
-              <ion-chip *ngFor="let juego of playGames">
-                <ion-avatar>
-                  <img [src]="['https://retroachievements.org' + juego.ImageIcon]" alt="imagen">
-                </ion-avatar>
-                <ion-label class="ion-text-nowrap">{{juego.Title}}</ion-label>
-
-              </ion-chip>
-
-            </div>
-          </div>
-        </ion-item>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!--------------------------------Ultimos logros---------------------------------------->
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Ultimos Logros</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="grid-container">
-        <ion-item>
-          <div class="lista">
-            <div class="logros">
-              <ion-thumbnail *ngFor="let logro of ultimosLogros">
-                <img [src]="['https://retroachievements.org' + logro.BadgeURL]" alt="imagen">
-              </ion-thumbnail>
-            </div>
-          </div>
-        </ion-item>
-
-
-        <ion-item>
-          <ion-icon name="location-outline" slot="start"></ion-icon>
-          <ion-label>
-            <h2>Dirección</h2>
-
-          </ion-label>
-        </ion-item>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-
+  <div class="games-played">
+    <h3>Ultimos Juegos</h3>
+    <app-carrusel [juegos]="playGames"></app-carrusel>
+  </div>
+  
 </ion-content>

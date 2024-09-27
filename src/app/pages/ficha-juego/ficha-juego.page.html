@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons (click)="pagAtras()" slot="start">
+      <ion-icon name="arrow-back-outline" size="large" ></ion-icon>
+    </ion-buttons>
+    <ion-title>{{juego.Title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="container">
+      
+      <div class="image-container">
+        <img [src]="['https://retroachievements.org' + juego.ImageBoxArt]" alt="imagen">
+      </div>
+
+      
+      <div class="details-grid">
+        <div class="detail-item">
+          <ion-card-subtitle>Plataforma:</ion-card-subtitle>
+          <ion-chip>{{juego.Console}}</ion-chip>
+        </div>
+        <div class="detail-item">
+          <ion-card-subtitle>Desarrollador:</ion-card-subtitle>
+          <ion-chip>{{juego.Developer}}</ion-chip>
+        </div>
+        <div class="detail-item">
+          <ion-card-subtitle>Publisher:</ion-card-subtitle>
+          <ion-chip>{{juego.Publisher}}</ion-chip>
+        </div>
+        <div class="detail-item">
+          <ion-card-subtitle>Genero:</ion-card-subtitle>
+          <ion-chip>{{juego.Genre}}</ion-chip>
+        </div>
+        <div class="detail-item">
+         
+          <ion-card-subtitle>Año:</ion-card-subtitle>
+          <ion-chip>{{juego.Released}}</ion-chip>
+        </div>
+       
+      </div>
+
+      <h2 class="section-title">Screenshots</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-item" [ngStyle]="{'background-image': 'url(https://retroachievements.org' + juego.ImageTitle + ')'}"></div>
+        <div class="screenshot-item" [ngStyle]="{'background-image': 'url(https://retroachievements.org' + juego.ImageIngame + ')'}"></div>
+      </div>
+
+      <h2 class="section-title">Logros</h2>
+     <app-carrusel-card></app-carrusel-card>
+     
+    </div>
+  </ion-content>

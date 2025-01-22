@@ -39,6 +39,7 @@ Si deseas contribuir al proyecto:
 1. Haz un fork del repositorio.
 2. Crea una rama para tus cambios:
    ```bash
+   git checkout -b feature/nueva-funcionalidad
 3. Realiza tus cambios y haz commit:
     ```bash
     git commit -m 'Agrega nueva funcionalidad'
